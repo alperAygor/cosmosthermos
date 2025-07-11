@@ -26,18 +26,18 @@ export default function FeaturedProductsSection({ inView }: FeaturedProductsSect
         {featuredProducts.map((product, index) => (
           <div key={product.id} className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100">
             {/* Ürün Resmi */}
-            <div className="relative h-52 overflow-hidden">
+           <div className="relative h-52 overflow-hidden">
               <Image 
                 src={product.image} 
                 alt={product.name} 
                 fill
-                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                className="object-cover group-hover:scale-110 transition-transform duration-500 z-0"
                 priority={index < 3}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               
               {/* Fiyat Etiketi */}
-              <div className="absolute top-3 right-3 bg-yellow-400 text-black px-2 py-1 rounded-full font-bold text-base shadow-lg">
+              <div className="absolute top-3 right-3 bg-yellow-400 text-black px-2 py-1 rounded-full font-bold text-base shadow-lg z-10">
                 {product.price}
               </div>
             </div>
@@ -64,7 +64,7 @@ export default function FeaturedProductsSection({ inView }: FeaturedProductsSect
               </div>
               
               {/* Aksiyon Butonları */}
-              <div className="flex gap-2">
+             <div className="flex gap-2 relative z-10">
                 <Link 
                   href={`/urunler/${product.id}`} 
                   className="flex-1 bg-blue-600 text-white py-2 px-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-center text-sm"
@@ -72,7 +72,7 @@ export default function FeaturedProductsSection({ inView }: FeaturedProductsSect
                   İncele
                 </Link>
                 <button className="bg-yellow-400 text-black py-2 px-3 rounded-lg font-semibold hover:bg-yellow-500 transition-colors text-sm">
-                  Sepete Ekle
+                  Ürüne Git
                 </button>
               </div>
             </div>
