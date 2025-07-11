@@ -81,15 +81,16 @@ export default function FeaturedProductsSection({ inView }: FeaturedProductsSect
       </div>
       
       {/* Tüm Ürünleri Gör Butonu */}
-      <div className="mt-12">
-        <Link
-          href="/urunler" 
+      div className="mt-12">
+      <Link href="/urunler">
+        <a
           className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-lg"
         >
           Tüm Ürünleri Gör
           <FaChevronRight size={16} />
-        </Link>
-      </div>
+        </a>
+      </Link>
+    </div>
     </section>
   );
 } 
